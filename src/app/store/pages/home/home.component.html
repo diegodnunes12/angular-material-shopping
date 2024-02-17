@@ -1,3 +1,7 @@
-<p>
-  home works!
-</p>
+<ng-container *ngIf="(products$ | async) as products">
+    <section class="container list-products">
+        <ng-container *ngFor="let item of products">
+          <app-card [product]="item"></app-card>
+        </ng-container>
+      </section>
+</ng-container>
