@@ -5,21 +5,24 @@ import { StoreRoutingModule } from './store-routing.module';
 import { ProductsService } from '../services/products.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatGridListModule, MatIconModule } from '@angular/material';
 import { HomeComponent } from './pages/home/home.component';
-import { CardComponent } from './components/card/card.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   imports: [
     CommonModule,
     StoreRoutingModule,
     HttpClientModule,
+
     MatCardModule,
+    MatGridListModule,
+    MatIconModule,
   ],
   declarations: [
     StoreComponent, 
     HomeComponent,
-    CardComponent,
+    DetailsComponent
   ],
   providers: [
     ProductsService

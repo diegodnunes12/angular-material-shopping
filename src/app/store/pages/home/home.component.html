@@ -1,7 +1,24 @@
 <ng-container *ngIf="(products$ | async) as products">
-    <section class="container list-products">
-        <ng-container *ngFor="let item of products">
-          <app-card [product]="item"></app-card>
-        </ng-container>
-      </section>
+  <div class="container">
+    <div class="grid">
+      <ng-container *ngFor="let item of products">
+        <mat-card class="card">
+          <img (click)="onClickNavigate(item.id)" mat-card-image [src]="item.image" [alt]="item.title" />
+          <mat-card-content>
+            <h2 (click)="onClickNavigate(item.id)">
+              {{item.title}}
+            </h2>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Fevorite">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="My cart">
+              <mat-icon>shopping_cart</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
 </ng-container>
