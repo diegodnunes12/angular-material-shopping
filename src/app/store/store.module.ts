@@ -8,6 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule, MatGridListModule, MatIconModule } from '@angular/material';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { DetailsComponent } from './pages/details/details.component';
   declarations: [
     StoreComponent, 
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    FavoritesComponent,
   ],
   providers: [
     ProductsService

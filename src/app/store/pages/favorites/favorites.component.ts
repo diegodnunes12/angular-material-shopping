@@ -1,26 +1,21 @@
-import { FavoritesService } from './../../../services/favorites.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductInterface } from 'src/app/interfaces/product.interface';
-import { ProductsService } from 'src/app/services/products.service';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-favorites',
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class FavoritesComponent implements OnInit {
   public products$: Observable<ProductInterface[]> | undefined;
 
-  constructor(
-    private productsService: ProductsService, 
-    private router: Router,
-    private favoritesService: FavoritesService,
-  ) { }
+  constructor(private router: Router, private favoritesService: FavoritesService) { }
 
   ngOnInit() {
-    this.products$ = this.productsService.getAllProducts();
+    this.products$ = this.favoritesService.productInterfaceChanges$;
   }
 
   public onClickNavigate(productId: number) {
@@ -30,4 +25,5 @@ export class HomeComponent implements OnInit {
   public toggleFavorite(product: ProductInterface) {
     this.favoritesService.toggleFavorite(product);
   }
+
 }

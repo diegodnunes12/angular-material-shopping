@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
-  <span>Tech Store</span>
+  <span class="logo" (click)="onClickNavigateHome()">Tech Store</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Fevorite">
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Fevorite" (click)="onClickNavigateFavorites()">
     <mat-icon>favorite</mat-icon>
   </button>
   <button mat-icon-button class="example-icon" aria-label="My cart">
