@@ -1,4 +1,26 @@
 {
+    "users": [
+        {
+            "id": 1,
+            "name": "Diego Nunes",
+            "email": "diegodnunes12@gmail.com",
+            "password": "123456",
+            "favorites": [
+                {
+                    "id": 1,
+                    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                    "price": 109.95,
+                    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                    "category": "men's clothing",
+                    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                    "rating": {
+                        "rate": 3.9,
+                        "count": 120
+                    }
+                }
+            ]
+        }
+    ],
     "products": [
         {
             "id": 1,
@@ -10,8 +32,7 @@
             "rating": {
                 "rate": 3.9,
                 "count": 120
-            },
-            "favorite": true
+            }
         },
         {
             "id": 2,
@@ -23,8 +44,7 @@
             "rating": {
                 "rate": 4.1,
                 "count": 259
-            },
-            "favorite": false
+            }
         },
         {
             "id": 3,
@@ -36,8 +56,7 @@
             "rating": {
                 "rate": 4.7,
                 "count": 500
-            },
-            "favorite": false
+            }
         },
         {
             "id": 4,
@@ -49,8 +68,7 @@
             "rating": {
                 "rate": 2.1,
                 "count": 430
-            },
-            "favorite": false
+            }
         },
         {
             "id": 5,
@@ -62,8 +80,7 @@
             "rating": {
                 "rate": 4.6,
                 "count": 400
-            },
-            "favorite": false
+            }
         },
         {
             "id": 6,
@@ -75,8 +92,7 @@
             "rating": {
                 "rate": 3.9,
                 "count": 70
-            },
-            "favorite": false
+            }
         },
         {
             "id": 7,
@@ -88,8 +104,7 @@
             "rating": {
                 "rate": 3,
                 "count": 400
-            },
-            "favorite": false
+            }
         },
         {
             "id": 8,
@@ -101,8 +116,7 @@
             "rating": {
                 "rate": 1.9,
                 "count": 100
-            },
-            "favorite": false
+            }
         },
         {
             "id": 9,
@@ -114,8 +128,7 @@
             "rating": {
                 "rate": 3.3,
                 "count": 203
-            },
-            "favorite": false
+            }
         },
         {
             "id": 10,
@@ -127,8 +140,7 @@
             "rating": {
                 "rate": 2.9,
                 "count": 470
-            },
-            "favorite": false
+            }
         },
         {
             "id": 11,
@@ -140,8 +152,7 @@
             "rating": {
                 "rate": 4.8,
                 "count": 319
-            },
-            "favorite": false
+            }
         },
         {
             "id": 12,
@@ -153,8 +164,7 @@
             "rating": {
                 "rate": 4.8,
                 "count": 400
-            },
-            "favorite": false
+            }
         },
         {
             "id": 13,
@@ -166,8 +176,7 @@
             "rating": {
                 "rate": 2.9,
                 "count": 250
-            },
-            "favorite": false
+            }
         },
         {
             "id": 14,
@@ -192,8 +201,7 @@
             "rating": {
                 "rate": 2.6,
                 "count": 235
-            },
-            "favorite": false
+            }
         },
         {
             "id": 16,
@@ -205,8 +213,7 @@
             "rating": {
                 "rate": 2.9,
                 "count": 340
-            },
-            "favorite": false
+            }
         },
         {
             "id": 17,
@@ -231,8 +238,7 @@
             "rating": {
                 "rate": 4.7,
                 "count": 130
-            },
-            "favorite": false
+            }
         },
         {
             "id": 19,
@@ -244,8 +250,7 @@
             "rating": {
                 "rate": 4.5,
                 "count": 146
-            },
-            "favorite": false
+            }
         },
         {
             "id": 20,
@@ -257,8 +262,7 @@
             "rating": {
                 "rate": 3.6,
                 "count": 145
-            },
-            "favorite": false
+            }
         }
     ]
 }

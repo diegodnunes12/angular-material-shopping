@@ -12,6 +12,10 @@ export class ProductsService {
         return this.http.get<ProductInterface[]>("http://localhost:3000/products");
     }
 
+    public getFavoritesProducts(): Observable<ProductInterface[]> {
+        return this.http.get<ProductInterface[]>("http://localhost:3000/products?favorite=true");
+    }
+
     public updateProduct(product: ProductInterface): Observable<ProductInterface[]> {
         return this.http.patch<ProductInterface[]>("http://localhost:3000/products", product);
     }

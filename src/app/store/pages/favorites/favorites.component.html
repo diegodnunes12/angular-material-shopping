@@ -3,9 +3,9 @@
     <div class="grid">
       <ng-container *ngFor="let item of products">
         <mat-card class="card">
-          <img (click)="onClickNavigate(item.id)" [src]="item.image" [alt]="item.title" />
+          <img (click)="onClickNavigateDetails(item.id)" [src]="item.image" [alt]="item.title" />
           <mat-card-content>
-            <h2 (click)="onClickNavigate(item.id)">
+            <h2 (click)="onClickNavigateDetails(item.id)">
               {{item.title}}
             </h2>
           </mat-card-content>
@@ -14,10 +14,10 @@
               <h3>$ {{item.price}}</h3>
             </div>
             <div>
-              <button mat-icon-button class="example-icon favorite-icon" aria-label="Fevorite" (click)="toggleFavorite(item)">
+              <button mat-icon-button class="favorite-icon" [ngClass]="{'active' : item.favorite}" aria-label="Fevorite" (click)="toggleFavorite(item)">
                 <mat-icon>favorite</mat-icon>
               </button>
-              <button mat-icon-button class="example-icon" aria-label="My cart">
+              <button mat-icon-button aria-label="My cart">
                 <mat-icon>shopping_cart</mat-icon>
               </button>
             </div>

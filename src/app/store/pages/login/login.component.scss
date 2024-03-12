@@ -1,0 +1,16 @@
+.container-login {    
+    width: 500px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        margin-bottom: 10px;
+    }
+}
+
+.mat-form-field {
+    width: 100%;
+}

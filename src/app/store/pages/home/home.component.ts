@@ -1,4 +1,3 @@
-import { FavoritesService } from './../../../services/favorites.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,19 +14,19 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private productsService: ProductsService, 
-    private router: Router,
-    private favoritesService: FavoritesService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.products$ = this.productsService.getAllProducts();
   }
 
-  public onClickNavigate(productId: number) {
+  public onClickNavigateDetails(productId: number) {
     this.router.navigate(["details", productId])
   }
 
   public toggleFavorite(product: ProductInterface) {
-    this.favoritesService.toggleFavorite(product);
+    product.favorite = !product.favorite;
+    this.productsService.updateProduct(product);
   }
 }
