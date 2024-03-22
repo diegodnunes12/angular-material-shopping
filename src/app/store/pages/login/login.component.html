@@ -1,26 +1,26 @@
 <div class="container-login">
   <mat-card class="card">
-    <form>
+    <form [formGroup]="formGroup" (submit)="onSubmit()">
       <h1>Login</h1>
       <p>
         <mat-form-field>
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="E-mail">
+          <input matInput placeholder="E-mail" formControlName="email">
         </mat-form-field>
       </p>
       <p>
         <mat-form-field>
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
         </mat-form-field>
       </p>
       <p>
-        <button mat-raised-button color="primary">Log in</button>
+        <button mat-raised-button color="primary" [disabled]="formGroup.invalid">Log in</button>
       </p>
+      <p *ngIf="userNotFound" class="user-not-found">* User or password invalid!</p>
     </form> 
   </mat-card>
-   
 </div>

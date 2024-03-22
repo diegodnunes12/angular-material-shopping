@@ -21,4 +21,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(["favorites"])
   }
 
+  public onClickNavigateProfile() {
+    this.router.navigate(["login"])
+  }
+
 }

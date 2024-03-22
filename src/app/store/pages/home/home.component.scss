@@ -1,3 +1,5 @@
+@import "variables";
+
 .container {
     padding: 16px;
 
@@ -36,7 +38,7 @@
 
                 &:hover {
                     cursor: pointer;
-                    color: lighten(#673ab7, 10%);
+                    color: lighten($color-primary, 10%);
                 }
             }
 
@@ -55,12 +57,12 @@
                     border: none;
 
                     &.active {
-                        color: #673ab7;
+                        color: $color-primary;
                     }
 
                     &:hover {
                         cursor: pointer;
-                        color: lighten(#673ab7, 10%);
+                        color: lighten($color-primary, 10%);
                     }
                 }
             }
