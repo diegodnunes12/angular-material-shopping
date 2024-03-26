@@ -1,3 +1,5 @@
+@import "variables";
+
 .container-login {    
     width: 500px;
     height: auto;
@@ -10,8 +12,9 @@
         margin-bottom: 10px;
     }
 
-    .user-not-found {
-        color: red;
+    .error {
+        color: $color-danger;
+        margin-top: 10px;
     }
 }
 

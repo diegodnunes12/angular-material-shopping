@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserInterface } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -8,11 +10,11 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public hide = true;
-  public userNotFound: boolean = false;
+  @ViewChild("error") public error: ElementRef;
+  public hide: boolean = true;
   public formGroup: FormGroup;
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   ngOnInit() {
     this.formGroup = new FormGroup({
@@ -25,16 +27,18 @@ export class LoginComponent implements OnInit {
     let email: string = this.formGroup.get("email")?.value;
     let password: string = this.formGroup.get("password")?.value;
 
-    this.usersService.getUser(email, password).subscribe({
-      next: (user) => {
-        if(user.id) {
-          console.log(user)
+    this.usersService.getUsers(email, password).subscribe({
+      next: (users: UserInterface[]) => {        
+        if(users.length === 0) {
+          this.error.nativeElement.innerText = "* Ops, user or password invalid!";
         } else {
-          this.userNotFound = true;
+          // Com um backend, deveria retornar um token correto. Para ilustração usaremos o id do usuário
+          localStorage.setItem("user_token", `${users[0].id}`);
+          this.router.navigate(["/"]);
         }
       },
       error: (error) => {
-        console.log(error)
+        this.error.nativeElement.innerText = "* Ops, there was an error logging in";
       }
     });
   }

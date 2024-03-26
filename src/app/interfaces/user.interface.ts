@@ -1,4 +1,6 @@
-export interface ProductInterface {
+import { ProductInterface } from "./product.interface";
+
+export interface UserInterface {
     id: number;
     email: string;
     password: string;

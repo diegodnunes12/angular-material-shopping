@@ -20,7 +20,7 @@
       <p>
         <button mat-raised-button color="primary" [disabled]="formGroup.invalid">Log in</button>
       </p>
-      <p *ngIf="userNotFound" class="user-not-found">* User or password invalid!</p>
+      <div #error class="error"></div>
     </form> 
   </mat-card>
 </div>

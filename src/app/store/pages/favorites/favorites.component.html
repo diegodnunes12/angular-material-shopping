@@ -1,4 +1,4 @@
-<ng-container *ngIf="(products$ | async) as products">
+<ng-container *ngIf="(productsFavorites$ | async) as products">
   <div class="container">
     <div class="grid">
       <ng-container *ngFor="let item of products">
@@ -14,7 +14,7 @@
               <h3>$ {{item.price}}</h3>
             </div>
             <div>
-              <button mat-icon-button class="favorite-icon" [ngClass]="{'active' : item.favorite}" aria-label="Fevorite" (click)="toggleFavorite(item)">
+              <button mat-icon-button class="favorite-icon" class="active" aria-label="Fevorite" (click)="toggleFavorite(item)">
                 <mat-icon>favorite</mat-icon>
               </button>
               <button mat-icon-button aria-label="My cart">
